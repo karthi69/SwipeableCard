@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     func setUpTablview()  {
-        self.cardsTableview.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.cardsTableview.register(CardTableviewCell.self, forCellReuseIdentifier: "CardTableviewCell")
         self.cardsTableview.delegate = self
         self.cardsTableview.dataSource = self
         self.cardsTableview.allowsSelection = false
@@ -34,12 +34,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.cardsTableview.dequeueReusableCell(withIdentifier: "cell")!
-
-        cell.textLabel?.text = self.tableData[indexPath.row]
-
+        guard let cell = self.cardsTableview.dequeueReusableCell(withIdentifier: "CardTableviewCell", for: indexPath) as? CardTableviewCell else { return UITableViewCell() }
+        // cell.sampleLabel.text = self.tableData[indexPath.row]
         return cell
     }
+    
 }
 
 

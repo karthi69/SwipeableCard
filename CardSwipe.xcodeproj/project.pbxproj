@@ -12,6 +12,8 @@
 		25F9CF6D2373165B003B2C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F9CF6B2373165B003B2C6A /* Main.storyboard */; };
 		25F9CF6F2373165D003B2C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F9CF6E2373165D003B2C6A /* Assets.xcassets */; };
 		25F9CF722373165D003B2C6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F9CF702373165D003B2C6A /* LaunchScreen.storyboard */; };
+		25F9CF7C23731B86003B2C6A /* CardTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9CF7B23731B86003B2C6A /* CardTableviewCell.swift */; };
+		25F9CF7E237322C0003B2C6A /* CardTableviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F9CF7D237322C0003B2C6A /* CardTableviewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		25F9CF6E2373165D003B2C6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25F9CF712373165D003B2C6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25F9CF732373165D003B2C6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25F9CF7B23731B86003B2C6A /* CardTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableviewCell.swift; sourceTree = "<group>"; };
+		25F9CF7D237322C0003B2C6A /* CardTableviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableviewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				25F9CF652373165B003B2C6A /* AppDelegate.swift */,
 				25F9CF692373165B003B2C6A /* ViewController.swift */,
+				25F9CF7B23731B86003B2C6A /* CardTableviewCell.swift */,
+				25F9CF7D237322C0003B2C6A /* CardTableviewCell.xib */,
 				25F9CF6B2373165B003B2C6A /* Main.storyboard */,
 				25F9CF6E2373165D003B2C6A /* Assets.xcassets */,
 				25F9CF702373165D003B2C6A /* LaunchScreen.storyboard */,
@@ -125,6 +131,7 @@
 				25F9CF722373165D003B2C6A /* LaunchScreen.storyboard in Resources */,
 				25F9CF6F2373165D003B2C6A /* Assets.xcassets in Resources */,
 				25F9CF6D2373165B003B2C6A /* Main.storyboard in Resources */,
+				25F9CF7E237322C0003B2C6A /* CardTableviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +144,7 @@
 			files = (
 				25F9CF6A2373165B003B2C6A /* ViewController.swift in Sources */,
 				25F9CF662373165B003B2C6A /* AppDelegate.swift in Sources */,
+				25F9CF7C23731B86003B2C6A /* CardTableviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
