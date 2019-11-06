@@ -12,11 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var cardsTableview: UITableView!
     
-      var tableData: [String] = ["Christ Redeemer", "Great Wall of China", "Machu Picchu","Petra","Pyramid at Chichén Itzá","Roman Colosseum","Taj Mahal"]
+    @IBOutlet weak var addNewButton: UIButton!
+    
+    var tableData: [String] = ["Christ Redeemer", "Great Wall of China", "Machu Picchu","Petra","Pyramid at Chichén Itzá","Roman Colosseum","Taj Mahal"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTablview()
+        addNewButton.layer.cornerRadius = 12.0
     }
     
     func setUpTablview()  {
@@ -33,6 +36,10 @@ class ViewController: UIViewController {
 
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 240
+       }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
     }

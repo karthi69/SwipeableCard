@@ -8,15 +8,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardTableviewCell" id="pm9-8k-bno" customClass="CardTableviewCell" customModule="CardSwipe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardTableviewCell" rowHeight="201" id="pm9-8k-bno" customClass="CardTableviewCell" customModule="CardSwipe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pm9-8k-bno" id="Zcw-qE-S8X">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-3R-er5">
+                        <rect key="frame" x="20" y="0.0" width="374" height="181"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-4j-AbQ" userLabel="Red view">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="rWG-Qr-QAS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-Id-eqO">
+                                <rect key="frame" x="150" y="0.0" width="374" height="181"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="ktK-ge-Jqr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ri0-Id-eqO" firstAttribute="bottom" secondItem="OPw-3R-er5" secondAttribute="bottom" id="2mz-qH-gSE"/>
+                            <constraint firstItem="EHb-4j-AbQ" firstAttribute="height" secondItem="OPw-3R-er5" secondAttribute="height" id="BHF-QY-9gP"/>
+                            <constraint firstItem="ri0-Id-eqO" firstAttribute="leading" secondItem="EHb-4j-AbQ" secondAttribute="trailing" id="Er9-iT-YcE"/>
+                            <constraint firstItem="ri0-Id-eqO" firstAttribute="top" secondItem="OPw-3R-er5" secondAttribute="top" id="OYY-iv-609"/>
+                            <constraint firstItem="ri0-Id-eqO" firstAttribute="height" secondItem="OPw-3R-er5" secondAttribute="height" id="RmR-vP-9mH"/>
+                            <constraint firstItem="EHb-4j-AbQ" firstAttribute="bottom" secondItem="OPw-3R-er5" secondAttribute="bottom" id="pcl-1X-ulC"/>
+                            <constraint firstItem="EHb-4j-AbQ" firstAttribute="top" secondItem="OPw-3R-er5" secondAttribute="top" id="qFZ-6z-lHv"/>
+                            <constraint firstItem="EHb-4j-AbQ" firstAttribute="leading" secondItem="PCG-Ho-NNV" secondAttribute="leading" id="wKN-s7-a4j"/>
+                        </constraints>
+                        <viewLayoutGuide key="contentLayoutGuide" id="PCG-Ho-NNV"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="C9B-Vh-kua"/>
+                    </scrollView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="OPw-3R-er5" firstAttribute="bottom" secondItem="Zcw-qE-S8X" secondAttribute="bottom" constant="-20" id="k5v-bx-Bvr"/>
+                    <constraint firstItem="OPw-3R-er5" firstAttribute="top" secondItem="Zcw-qE-S8X" secondAttribute="top" id="lOZ-Cx-ucs"/>
+                    <constraint firstItem="OPw-3R-er5" firstAttribute="trailing" secondItem="Zcw-qE-S8X" secondAttribute="trailing" constant="-20" id="w1Q-5Q-7rJ"/>
+                    <constraint firstItem="OPw-3R-er5" firstAttribute="leading" secondItem="Zcw-qE-S8X" secondAttribute="leading" constant="20" id="ytm-iv-GLF"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="343" y="43"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cardBackgroundView" destination="ri0-Id-eqO" id="5Vh-cR-NNH"/>
+            </connections>
+            <point key="canvasLocation" x="231.8840579710145" y="-41.183035714285715"/>
         </tableViewCell>
     </objects>
 </document>

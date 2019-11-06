@@ -11,6 +11,7 @@ import UIKit
 
 class  CardTableviewCell : UITableViewCell {
     @IBOutlet weak var sampleLabel: UILabel!
+    @IBOutlet weak var cardBackgroundView: UIView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,7 +23,7 @@ class  CardTableviewCell : UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        cardBackgroundView.layer.cornerRadius = 15
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
