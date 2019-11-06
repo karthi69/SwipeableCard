@@ -20,7 +20,11 @@ class ViewController: UIViewController {
     }
     
     func setUpTablview()  {
-        self.cardsTableview.register(CardTableviewCell.self, forCellReuseIdentifier: "CardTableviewCell")
+        let identifier = "CardTableviewCell"
+        if  Bundle.main.path(forResource: identifier  , ofType: "nib") != nil {
+             let nib =  UINib(nibName: identifier , bundle: nil)
+            self.cardsTableview.register(nib, forCellReuseIdentifier: identifier)
+        }
         self.cardsTableview.delegate = self
         self.cardsTableview.dataSource = self
         self.cardsTableview.allowsSelection = false
