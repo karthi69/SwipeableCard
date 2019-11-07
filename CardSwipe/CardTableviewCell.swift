@@ -12,6 +12,7 @@ import UIKit
 class  CardTableviewCell : UITableViewCell {
     @IBOutlet weak var sampleLabel: UILabel!
     @IBOutlet weak var cardBackgroundView: UIView!
+    @IBOutlet weak var scrollview: UIScrollView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,6 +25,7 @@ class  CardTableviewCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cardBackgroundView.layer.cornerRadius = 15
+        scrollview.contentSize = CGSize.init(width: 1500, height: scrollview.frame.height)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
