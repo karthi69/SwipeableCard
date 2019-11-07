@@ -66,6 +66,3 @@ var contentView:UIView?
     
 }
 
-extension CardActionView {
-    
-}

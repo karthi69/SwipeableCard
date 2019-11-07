@@ -8,18 +8,37 @@
 
 import UIKit
 
+struct CardModel {
+    var name : String
+    var cardId : String
+    var cardHolderName : String
+    var bankName : String
+    var bankLogo : String
+    var bgColor  : String
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var cardsTableview: UITableView!
     
     @IBOutlet weak var addNewButton: UIButton!
     
-    var tableData: [String] = ["Christ Redeemer", "Great Wall of China", "Machu Picchu","Petra","Pyramid at Chichén Itzá","Roman Colosseum","Taj Mahal"]
+    var tableData: [CardModel]?
+    
+    func getData() -> [CardModel] {
+        return      [CardModel.init(name: "Visa", cardId: "7328 4344 4589 22GA", cardHolderName: "Rahul sharma",                   bankName: "SBI", bankLogo: "Stage Bank of India", bgColor: "#A569BD"),
+                     CardModel.init(name: "Visa", cardId: "8128 9801 0839 Y2H6", cardHolderName: "Rahul sharma", bankName: "Citi", bankLogo: "Citi India Bank", bgColor: "#C0392B"),
+                     CardModel.init(name: "Cred", cardId: "2228 4344 3253 45JK", cardHolderName: "Rahul sharma", bankName: "SBI", bankLogo: "Stage Bank of India", bgColor: "#A569BD"),
+                     CardModel.init(name: "Visa", cardId: "3928 2451 4839 26LO", cardHolderName: "Rahul sharma", bankName: "KVB", bankLogo: "Karur Visia Bank", bgColor: "#27AE60"),
+                     CardModel.init(name: "Debit", cardId: "9428 4344 4839 91BA", cardHolderName: "Rahul sharma", bankName: "BOI", bankLogo: "Bank of Baroda", bgColor: "#D35400")]
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTablview()
         addNewButton.layer.cornerRadius = 12.0
+        tableData = getData()
     }
     
     func setUpTablview()  {
@@ -41,15 +60,54 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+        return tableData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.cardsTableview.dequeueReusableCell(withIdentifier: "CardTableviewCell", for: indexPath) as? CardTableviewCell else { return UITableViewCell() }
         cell.scrollToCenter()
+        if let model = tableData?[indexPath.row] {
+           cell.configureView(model:model)
+            cell.cellCallBacks = self
+        }
+        
         return cell
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollToCenterAllCells(cardId: nil)
+    }
+    
+    func scrollToCenterAllCells(cardId: String?)  {
+        guard let data = tableData else {
+            return
+        }
+        for i in 0...data.count - 1{
+            if let cell = cardsTableview.cellForRow(at: NSIndexPath(row: i, section: 0) as IndexPath) as?CardTableviewCell  {
+                if  cardId != cell.cardModel?.cardId {
+                      cell.scrollToCenter()
+                }
+            }
+        }
+    }
+}
+
+extension ViewController : CellCallBacks {
+    func startPayment(model: CardModel) {
+        print("startPayment -->", model.cardId)
+    }
+    
+    func viewDetails(model: CardModel) {
+         print("viewDetails -->", model.cardId)
+    }
+    
+    func viewOtherDetails(model: CardModel) {
+         print("viewDetails -->", model.cardId)
+    }
+    
+    func beginSwipeCell(cardId: String) {
+         scrollToCenterAllCells(cardId: cardId)
+    }
 }
 
 
