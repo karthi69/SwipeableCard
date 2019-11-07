@@ -50,6 +50,14 @@ class ViewController: UIViewController {
         self.cardsTableview.delegate = self
         self.cardsTableview.dataSource = self
         self.cardsTableview.allowsSelection = false
+        cardsTableview.separatorStyle = .none
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.initialAnimation()
+        }
     }
 }
 
@@ -68,7 +76,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         cell.scrollToCenter()
         if let model = tableData?[indexPath.row] {
            cell.configureView(model:model)
-            cell.cellCallBacks = self
+           cell.cellCallBacks = self
         }
         
         return cell
@@ -90,23 +98,44 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+
+    func initialAnimation()  {
+        if let cell = cardsTableview.cellForRow(at: NSIndexPath(row: 0, section: 0) as IndexPath) as? CardTableviewCell {
+            cell.scrollToRightEdge()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                cell.scrollToCenter()
+            }
+        }
+    }
+    
 }
 
 extension ViewController : CellCallBacks {
     func startPayment(model: CardModel) {
-        print("startPayment -->", model.cardId)
+        showAlert(title: "Start the payment", detail: model.cardId)
     }
     
     func viewDetails(model: CardModel) {
-         print("viewDetails -->", model.cardId)
+        showAlert(title: "View  details", detail: model.cardId)
     }
     
     func viewOtherDetails(model: CardModel) {
-         print("viewDetails -->", model.cardId)
+        showAlert(title: "View other details", detail: model.cardId)
     }
     
     func beginSwipeCell(cardId: String) {
          scrollToCenterAllCells(cardId: cardId)
+    }
+    
+    func showAlert(title : String, detail : String)  {
+        // create the alert
+        let alert = UIAlertController(title: title, message: "Card ID: " + detail, preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

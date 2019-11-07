@@ -15,13 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-3R-er5">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-3R-er5">
                         <rect key="frame" x="20" y="0.0" width="374" height="181"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QM-pV-tKD">
                                 <rect key="frame" x="0.0" y="0.0" width="804" height="181"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34B-EQ-D6P" customClass="CardActionView" customModule="CardSwipe" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34B-EQ-D6P" customClass="CardActionView" customModule="CardSwipe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="215" height="181"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -100,7 +100,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.62352941179999999" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9QM-pV-tKD" firstAttribute="centerY" secondItem="OPw-3R-er5" secondAttribute="centerY" id="GX6-QO-cbU"/>
                             <constraint firstAttribute="bottom" secondItem="9QM-pV-tKD" secondAttribute="bottom" id="RfJ-WM-kws"/>
@@ -127,6 +127,7 @@
                 <outlet property="cardHolderNameLabel" destination="giv-KA-rD9" id="naU-CA-zET"/>
                 <outlet property="cardIdLabel" destination="6gr-Kv-h2P" id="5Zz-EH-Iqm"/>
                 <outlet property="cardTypeLabel" destination="Dsm-mw-MX1" id="DPo-86-4DZ"/>
+                <outlet property="cardViewWidthConstraint" destination="ew2-LF-JTV" id="0iM-6I-CR5"/>
                 <outlet property="leftCardActionView" destination="34B-EQ-D6P" id="JYo-LG-Xd8"/>
                 <outlet property="scrollview" destination="OPw-3R-er5" id="8My-Gs-Uo2"/>
             </connections>

@@ -36,6 +36,8 @@ class  CardTableviewCell : UITableViewCell {
     
     var cardModel : CardModel?
     
+    @IBOutlet weak var cardViewWidthConstraint: NSLayoutConstraint!
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -48,7 +50,7 @@ class  CardTableviewCell : UITableViewCell {
         super.awakeFromNib()
         cardBackgroundView.layer.cornerRadius = 15
         setupCalbacks()
-        scrollview.scrollRectToVisible(CGRect.init(x: scrollview.contentSize.width/2, y: 0, width: 0, height: 0), animated: false)
+//        scrollview.scrollRectToVisible(CGRect.init(x: scrollview.contentSize.width/2, y: 0, width: 0, height: 0), animated: false)
     }
     
     func setupCalbacks()  {
@@ -64,6 +66,10 @@ class  CardTableviewCell : UITableViewCell {
 
 extension CardTableviewCell {
     func configureView(model : CardModel)  {
+        var bounds = UIScreen.main.bounds
+        var width = bounds.size.width
+        
+        cardViewWidthConstraint.constant = width - 40
         cardModel = model
         cardBackgroundView.backgroundColor =  Utility.hexStringToUIColor(model.bgColor)
         bankLogoLabel.text = model.bankLogo
