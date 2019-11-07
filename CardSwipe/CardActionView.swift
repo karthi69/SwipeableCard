@@ -9,10 +9,22 @@
 import Foundation
 import UIKit
 
+protocol CardViewActionDelegate {
+    func startPayment()
+    func viewCardDetails()
+    func viewOthers()
+}
+
 @IBDesignable
 class CardActionView : UIView {
 var contentView:UIView?
-@IBInspectable var nibName:String?
+    @IBOutlet weak var payNowButton: UIButton!
+    @IBOutlet weak var viewDetailsButton: UIButton!
+    @IBOutlet weak var othersButton: UIButton!
+    @IBInspectable var nibName:String?
+    
+    var  cardActionDelegate : CardViewActionDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         nibName = "CardActionView"
@@ -38,5 +50,22 @@ var contentView:UIView?
                     withOwner: self,
                     options: nil).first as? UIView
     }
+    
+    @IBAction func payNowButtonClicked(_ sender: Any) {
+        cardActionDelegate?.startPayment()
+    }
+    
+    
+    @IBAction func viewDetailsButtonClicked(_ sender: Any) {
+        cardActionDelegate?.viewCardDetails()
+    }
+    
+    @IBAction func othersButtonClicked(_ sender: Any) {
+        cardActionDelegate?.viewOthers()
+    }
+    
+}
+
+extension CardActionView {
     
 }

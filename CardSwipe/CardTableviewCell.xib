@@ -19,31 +19,31 @@
                         <rect key="frame" x="20" y="0.0" width="374" height="181"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QM-pV-tKD">
-                                <rect key="frame" x="0.0" y="0.0" width="854" height="181"/>
+                                <rect key="frame" x="0.0" y="0.0" width="804" height="181"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34B-EQ-D6P" customClass="CardActionView" customModule="CardSwipe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="181"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="181"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="5n8-2p-49U"/>
+                                            <constraint firstAttribute="width" constant="215" id="5n8-2p-49U"/>
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ri0-Id-eqO">
-                                        <rect key="frame" x="240" y="0.0" width="374" height="181"/>
+                                        <rect key="frame" x="215" y="0.0" width="374" height="181"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="374" id="ew2-LF-JTV"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRU-kh-snD" customClass="CardActionView" customModule="CardSwipe" customModuleProvider="target">
-                                        <rect key="frame" x="614" y="0.0" width="240" height="181"/>
+                                        <rect key="frame" x="589" y="0.0" width="215" height="181"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="V4B-mm-9ZU"/>
+                                            <constraint firstAttribute="width" constant="215" id="V4B-mm-9ZU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.10980392156862745" green="0.13333333333333333" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KRU-kh-snD" secondAttribute="trailing" id="26y-yp-GSi"/>
                                     <constraint firstAttribute="bottom" secondItem="34B-EQ-D6P" secondAttribute="bottom" id="7Dp-fC-5va"/>
@@ -78,7 +78,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="cardActionView" destination="KRU-kh-snD" id="mfe-lm-eAv"/>
                 <outlet property="cardBackgroundView" destination="ri0-Id-eqO" id="5Vh-cR-NNH"/>
+                <outlet property="leftCardActionView" destination="34B-EQ-D6P" id="JYo-LG-Xd8"/>
                 <outlet property="scrollview" destination="OPw-3R-er5" id="8My-Gs-Uo2"/>
             </connections>
             <point key="canvasLocation" x="231.8840579710145" y="-41.183035714285715"/>

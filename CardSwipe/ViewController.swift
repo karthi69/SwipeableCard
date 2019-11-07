@@ -46,7 +46,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.cardsTableview.dequeueReusableCell(withIdentifier: "CardTableviewCell", for: indexPath) as? CardTableviewCell else { return UITableViewCell() }
-        // cell.sampleLabel.text = self.tableData[indexPath.row]
+        cell.scrollToCenter()
         return cell
     }
     
